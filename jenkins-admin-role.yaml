@@ -1,0 +1,124 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: "2021-11-23T13:18:38Z"
+  name: jenkins-admin
+  namespace: devsecops-poc
+  resourceVersion: "836996733"
+  selfLink: /apis/rbac.authorization.k8s.io/v1/namespaces/devsecops-poc/roles/jenkins-admin
+  uid: 187622ab-14fa-4543-bb72-a48831e007d6
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods/exec
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/log
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - pods/attach
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+   - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - persistentvolumeclaims
+  verbs:
+  - create
+  - get
+  - list
+  - patch
+  - watch
+- apiGroups:
+  - batch
+  resources:
+  - jobs
+  verbs:
+  - create
+  - get
+  - list
+  - patch
+  - watch
+  - delete
+  - update
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - services
+  - secrets
+  - configmaps
+  - events
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+   - extensions
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - kubeflow.org
+  resources:
+  - experiments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
